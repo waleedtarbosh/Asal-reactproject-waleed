@@ -1,5 +1,5 @@
 import React from 'react'
-import Tablee from './Tablee'
+import StudentTable from './StudentTable'
 const Student = () => {
   return (
     <React.Fragment>
@@ -7,7 +7,7 @@ const Student = () => {
       <br></br>
       <br></br>
       <br></br>
-    <Tablee></Tablee>
+    <StudentTable></StudentTable>
     </section>
   </React.Fragment>
   )

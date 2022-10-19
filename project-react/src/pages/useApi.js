@@ -2,7 +2,7 @@ import axios from "axios";
 import {useEffect,useState} from "react";
 import "./UseApi.css";
 export const useApi = (url) => {
-const [users,setUsers] = useState([]);
+const [data,setData] = useState([]);
 const [loading,setLoading] = useState(null);
 const [err,setErr] = useState(null);
 
@@ -12,7 +12,7 @@ setLoading(true);
 axios.get(url)
 .then(data => {
     setLoading(false);
-    setUsers(data.data);
+    setData(data.data);
 })
 .catch(err=>{
 
@@ -21,6 +21,6 @@ axios.get(url)
 })
 
 },[url])
-return [users,loading,err];
+return [data,loading,err];
 
 }

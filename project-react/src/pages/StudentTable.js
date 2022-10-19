@@ -2,13 +2,13 @@ import React from 'react';
 import { useApi } from './useApi';
 function StudentTable() {
   
-  const [users,loading, err] =useApi('https://api.github.com/users/ariv797/repos')
+  const [data,loading, err] =useApi('https://api.github.com/users/ariv797/repos')
 
   return (
     
     <div className="container">
       {loading && <p>Loading...</p>}
-        <h2> There are {users.length} Student in the Database </h2>
+        <h2> There are {data.length} Student in the Database </h2>
         <table className="table">
           <thead>
             <tr>
@@ -24,7 +24,7 @@ function StudentTable() {
             </tr>
           </thead>
           <tbody>
-            {users.map((post) => (
+            {data.map((post) => (
               <tr key={post.id}>
                
                 <td> {post.id} </td>

@@ -1,10 +1,13 @@
 import React from 'react'
-
+import StudentTable from './StudentTable'
 const Student = () => {
   return (
     <React.Fragment>
     <section>
-      <div className="centered text-4xl h-screen">This is Student Page</div>
+      <br></br>
+      <br></br>
+      <br></br>
+    <StudentTable></StudentTable>
     </section>
   </React.Fragment>
   )

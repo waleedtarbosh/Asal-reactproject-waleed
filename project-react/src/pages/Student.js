@@ -4,9 +4,6 @@ const Student = () => {
   return (
     <React.Fragment>
     <section>
-      <br></br>
-      <br></br>
-      <br></br>
     <StudentTable></StudentTable>
     </section>
   </React.Fragment>

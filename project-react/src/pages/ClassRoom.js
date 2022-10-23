@@ -1,10 +1,10 @@
 import React from 'react'
-
+import ClassRoomTable from './ClassRoomTable'
 const ClassRoom = () => {
   return (
     <React.Fragment>
     <section>
-      <div className="centered text-4xl h-screen">This is ClassRoom Page</div>
+    <ClassRoomTable></ClassRoomTable>
     </section>
   </React.Fragment>
   )

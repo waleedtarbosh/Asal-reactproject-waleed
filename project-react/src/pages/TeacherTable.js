@@ -5,20 +5,20 @@ import tableIcons from "./MaterialTableIcons";
 import { useApi } from './useApi';
 import './font-h2.css'
 
-function StudentTable() {
+function TeacherTable() {
   
-  const [data,setData,loading, err] =useApi('https://api.github.com/users/ariv797/repos')
+  const [data,setData,loading, err] =useApi('https://api.github.com/users/edvardHua/repos')
   const columns = [
     { title: "ID", field: "id", sorting: false, filtering: false, cellStyle: { background:"#009688" }, headerStyle: { color: "#fff" } },
     { title: "Full Name", field: "full_name", filterPlaceholder: "filter" },
-    { title: "Type", field: "owner.type", align: "center", grouping: false ,filterPlaceholder: "filter"},
+    { title: "Type", field: "owner.type", align: "center", grouping: false,filterPlaceholder:"filter" },
     { title: "Language", field: "language",filterPlaceholder:"filter" },
      
   ]
   return (
     <div className="table">
         {loading && <p>Loading...</p>}
-        <h2> There are {data.length} Student in the Database</h2>
+        <h2> There are {data.length} Teacher in the Database</h2>
       <MaterialTable columns={columns} data={data} icons={tableIcons}
         editable={{
           onRowAdd: (newRow) => new Promise((resolve, reject) => {
@@ -54,16 +54,16 @@ function StudentTable() {
           searchFieldAlignment: "right", searchAutoFocus: true, searchFieldVariant: "standard",
           filtering: true, paging: true, pageSizeOptions: [2, 5, 10, 20, 25, 50, 100], pageSize: 5,
           paginationType: "stepped", showFirstLastPageButtons: false, paginationPosition: "both", exportButton: true,
-          exportAllData: true, exportFileName: "data", addRowPosition: "first", actionsColumnIndex: -1, selection: true,
+          exportAllData: true, exportFileName: "TableData", addRowPosition: "first", actionsColumnIndex: -1, selection: true,
           showSelectAllCheckbox: false, showTextRowsSelected: false, selectionProps: rowData => ({
-            //disabled: rowData.id ===374287404,
+            //disabled: rowData.id ===492722891,
              //color:"primary"
           }),
           grouping: false, columnsButton: true,
           rowStyle: (data, index) => index % 2 === 0 ? { background: "#f5f5f5" } : null,
           headerStyle: { background: "#f44336",color:"#fff"}
         }}
-        title="Student Information"
+        title="Teacher Information"
         />
         {err && <p>{err}</p>}
         
@@ -73,4 +73,4 @@ function StudentTable() {
   );
 }
 
-export default StudentTable;
+export default TeacherTable;

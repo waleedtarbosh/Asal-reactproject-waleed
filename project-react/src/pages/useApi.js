@@ -1,6 +1,5 @@
 import axios from "axios";
 import {useEffect,useState} from "react";
-import "./UseApi.css";
 export const useApi = (url) => {
 const [data,setData] = useState([]);
 const [loading,setLoading] = useState(null);
@@ -21,6 +20,6 @@ axios.get(url)
 })
 
 },[url])
-return [data,loading,err];
+return [data,setData,loading,err];
 
 }

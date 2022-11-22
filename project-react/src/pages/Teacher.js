@@ -1,10 +1,10 @@
 import React from 'react'
-
+import TeacherTable from './TeacherTable'
 const Teacher = () => {
   return (
     <React.Fragment>
     <section>
-      <div className="centered text-4xl h-screen">This is Teacher Page</div>
+    <TeacherTable></TeacherTable>
     </section>
   </React.Fragment>
   )
